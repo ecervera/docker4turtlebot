@@ -23,7 +23,7 @@ docker run --rm -it --net=ros_network --name turtlebot \
 Launch the TurtleBot teleoperation client:
 ```
 docker run --rm -it --net=ros_network --name client \
---env ROS_HOSTNAME=client \
---env ROS_MASTER_URI=http://turtlebot:11311 \
-robinlab/turtlebot:melodic roslaunch turtlebot_teleop keyboard_teleop.launch
+  --env ROS_HOSTNAME=client \
+  --env ROS_MASTER_URI=http://turtlebot:11311 \
+  robinlab/turtlebot:melodic roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
