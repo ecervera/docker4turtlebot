@@ -9,12 +9,12 @@ Copy the rule into `/etc/udev/rules.d` and run the command:
 
 Create a docker network:
 ```
-docker network create -d bridge ros_network
+docker network create rosnet
 ```
 
 Launch the TurtleBot server:
 ```
-docker run --rm -it --net=ros_network --name turtlebot \
+docker run --rm -it --net=rosnet --name turtlebot \
   --env ROS_HOSTNAME=turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
   robinlab/turtlebot:melodic roslaunch turtlebot_bringup minimal.launch
@@ -22,7 +22,7 @@ docker run --rm -it --net=ros_network --name turtlebot \
 
 Launch the TurtleBot teleoperation client:
 ```
-docker run --rm -it --net=ros_network --name client \
+docker run --rm -it --net=rosnet --name client \
   --env ROS_HOSTNAME=client \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
   robinlab/turtlebot:melodic roslaunch turtlebot_teleop keyboard_teleop.launch
