@@ -14,8 +14,8 @@ docker network create -d bridge ros_network
 
 Launch the TurtleBot server:
 ```
-docker run --rm --net=ros_network --name turtlebot \
-  --env ROS_HOSTNAME=client \
+docker run --rm -it --net=ros_network --name turtlebot \
+  --env ROS_HOSTNAME=turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
   robinlab/turtlebot:melodic
 ```
