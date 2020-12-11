@@ -19,7 +19,7 @@ docker run --rm -it --net=rosnet --name turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
   --env TURTLEBOT_BATTERY=None \
   --device=/dev/kobuki:/dev/kobuki \
-  robinlab/turtlebot:melodic roslaunch turtlebot_bringup minimal.launch
+  robinlab/turtlebot:kinetic roslaunch turtlebot_bringup minimal.launch
 ```
 
 Launch the TurtleBot teleoperation client:
@@ -27,7 +27,7 @@ Launch the TurtleBot teleoperation client:
 docker run --rm -it --net=rosnet --name client \
   --env ROS_HOSTNAME=client \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
-  robinlab/turtlebot:melodic roslaunch turtlebot_teleop keyboard_teleop.launch
+  robinlab/turtlebot:kinetic roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
 ## Networking containers across multiple hosts
@@ -55,7 +55,7 @@ docker run --rm -it --net=rosnet --name turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
   --env TURTLEBOT_BATTERY=None \
   --device=/dev/kobuki:/dev/kobuki \
-  robinlab/turtlebot:melodic roslaunch turtlebot_bringup minimal.launch
+  robinlab/turtlebot:kinetic roslaunch turtlebot_bringup minimal.launch
 ```
 
 5. In desktop PC
@@ -63,5 +63,5 @@ docker run --rm -it --net=rosnet --name turtlebot \
 docker run --rm -it --net=rosnet --name client \
   --env ROS_HOSTNAME=client \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
-  robinlab/turtlebot:melodic roslaunch turtlebot_teleop keyboard_teleop.launch
+  robinlab/turtlebot:kinetic roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
