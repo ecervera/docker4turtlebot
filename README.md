@@ -30,9 +30,9 @@ docker run --rm -it --net=rosnet --name client \
   robinlab/turtlebot:kinetic roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
-## Networking containers across multiple hosts
+## Networking containers across multiple hosts (in the same network)
 
-1. In desktop PC
+1. In external PC
 ```
 docker swarm init
 ```
@@ -43,7 +43,7 @@ docker swarm init
 docker swarm join --token <TOKEN> <IP-ADDRESS-OF-MANAGER>:2377
 ```
 
-3. In desktop PC
+3. In external PC
 ```
 docker network create -d overlay --attachable rosnet
 ```
@@ -58,7 +58,7 @@ docker run --rm -it --net=rosnet --name turtlebot \
   robinlab/turtlebot:kinetic roslaunch turtlebot_bringup minimal.launch
 ```
 
-5. In desktop PC
+5. In external PC
 ```
 docker run --rm -it --net=rosnet --name client \
   --env ROS_HOSTNAME=client \
