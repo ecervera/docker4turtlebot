@@ -45,7 +45,7 @@ docker swarm join --token <TOKEN> <IP-ADDRESS-OF-MANAGER>:2377
 
 3. In desktop PC
 ```
-docker network create -d overlay –-attachable rosnet
+docker network create -d overlay --attachable rosnet
 ```
 
 4. In TurtleBot
