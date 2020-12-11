@@ -32,6 +32,8 @@ docker run --rm -it --net=rosnet --name client \
 
 ## Networking containers across multiple hosts (in the same network)
 
+Based on [the Docker docs](https://docs.docker.com/network/network-tutorial-overlay/#use-an-overlay-network-for-standalone-containers).
+
 1. In external PC
 ```
 docker swarm init
