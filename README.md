@@ -17,6 +17,7 @@ Launch the TurtleBot server:
 docker run --rm -it --net=rosnet --name turtlebot \
   --env ROS_HOSTNAME=turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
+  --env TURTLEBOT_BATTERY=None \
   --device=/dev/kobuki:/dev/kobuki \
   robinlab/turtlebot:melodic roslaunch turtlebot_bringup minimal.launch
 ```
@@ -52,6 +53,7 @@ docker network create -d overlay –-attachable rosnet
 docker run --rm -it --net=rosnet --name turtlebot \
   --env ROS_HOSTNAME=turtlebot \
   --env ROS_MASTER_URI=http://turtlebot:11311 \
+  --env TURTLEBOT_BATTERY=None \
   --device=/dev/kobuki:/dev/kobuki \
   robinlab/turtlebot:melodic roslaunch turtlebot_bringup minimal.launch
 ```
