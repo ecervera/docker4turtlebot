@@ -1,0 +1,3 @@
+docker run --name turtlebot --rm -it \
+           --device=/dev/kobuki:/dev/kobuki \
+           turtlebot:noetic

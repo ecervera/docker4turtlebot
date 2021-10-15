@@ -1,0 +1,31 @@
+# TurtleBot teleop
+teleop:
+  image: robinlab/turtlebot:noetic
+  container_name: teleop
+  hostname: teleop
+  net: rosdocker
+  environment:
+      - "ROS_HOSTNAME=teleop"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  command: roslaunch turtlebot_teleop keyboard_teleop
+
+# TurtleBot bringup
+bringup:
+  image: robinlab/turtlebot:noetic
+  container_name: turtlebot
+  hostname: turtlebot
+  net: rosdocker
+  environment:
+      - "ROS_HOSTNAME=turtlebot"
+      - "ROS_MASTER_URI=http://rosmaster:11311"
+  command: roslaunch turtlebot_bringup minimal.launch
+  
+# ROS MASTER (ROSCORE)
+rosmaster:
+  image: ros:noetic-ros-base
+  container_name: rosmaster
+  hostname: rosmaster
+  net: rosdocker
+  ports:
+       - "11311:11311"
+  command: roscore
